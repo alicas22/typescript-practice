@@ -3,21 +3,21 @@ import { dog, cat, bird, pigeon, anyAnimal } from "./animals_data";
 // Part 1: Remove the errors in the function below by filling the conditions of the if statements on lines 6, 13, and 20
 function classifyAnimal(animal: anyAnimal) {
 
-    if () {
+    if ('barks' in animal) {
 
         animal.barks
         console.log('This is a dog')
         return
     }
 
-    if () {
+    if ('coos' in animal) {
 
         animal.coos
         console.log('This is a pigeon')
         return
     }
 
-    if () {
+    if ('meows' in animal) {
 
         animal.meows
         console.log('This is a cat')
@@ -28,16 +28,27 @@ function classifyAnimal(animal: anyAnimal) {
 
 
 // Part 2: Uncomment the lines below and test the classifyAnimal function by creating dog, pigeon, and cat objects
-// const fido = {
+const fido: dog = {
+    name: 'Fido',
+    color: "brown",
+    barks:true,
+}
+classifyAnimal(fido) // should print 'This is a dog'
 
-// }
-// classifyAnimal(fido) // should print 'This is a dog'
+const whiskers: cat = {
+    name: 'Cat',
+    color: "deez nutz",
+    meows:true,
+    hasTail:true,
+}
+classifyAnimal(whiskers) // should print 'This is a cat'
 
-// const whiskers = {
-// }
-// classifyAnimal(whiskers) // should print 'This is a cat'
+const skyrat:pigeon = {
+    name: 'Pidgey',
+    color: 'grey',
+    canFly: true,
+    coos:true
 
-// const skyrat = {
 
-// }
-// classifyAnimal(skyrat) // should print 'This is a pigeon'
+}
+classifyAnimal(skyrat) // should print 'This is a pigeon'

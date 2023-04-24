@@ -23,11 +23,27 @@
 /*------------------------------------------write code here-----------------------------------------------*/
 
 
+let longestCommonPrefix = function(strs:Array<string>):string {
 
+    let prefix:string = strs[0]
+    for(let i:number = 1; i < strs.length; i++){
+
+	   let index:number = 0;
+	   let word:string = ''
+	   while((prefix[index] && strs[i][index])&& prefix[index] === strs[i][index]){
+
+        word += strs[i][index]
+        index++
+	  }
+         prefix = word;
+    }
+    return  prefix
+
+}
 
 
 
 // -----------------------------------------Uncomment testcases-------------------------------------------------------
 
-// console.log(longestCommonPrefix(["flower","flow","flight"])) //"fl"
-// console.log(longestCommonPrefix(["dog","racecar","car"])) //""
+console.log(longestCommonPrefix(["flower","flow","flight"])) //"fl"
+console.log(longestCommonPrefix(["dog","racecar","car"])) //""

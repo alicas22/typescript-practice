@@ -11,14 +11,19 @@ Bonus: Specify the return type to enforce that the return type matches the input
 There are many ways to do so, but you may need to do some research into multiple function signatures or the typeof operator
 */
 
-function makePalindrome(num) {
+function makePalindrome(num:string | number):string | number {
+    let x: string | number
+    if (typeof num === "string") x = num
+    else x = num.toString()
 
-    const arr = num.split('');
+    const arr = x.split('');
     const reversedArr = arr.slice();
     reversedArr.reverse()
     const paliArr = arr.concat(reversedArr)
 
-    return paliArr.join('')
+    if (typeof num === "string") return paliArr.join('')
+    else return +paliArr.join("")
+
 }
 
 // expected output: 1234554321 (of correct return type)

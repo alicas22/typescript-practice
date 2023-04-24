@@ -4,9 +4,7 @@
 // let course = "TypeScript"
 
 /*--------------------write code here--------------------*/
-
-
-
+let course: string = "TypeScript"
 
 
 // -----------------Uncomment testcases----------------------
@@ -17,7 +15,7 @@
 // let day = 3
 /*--------------------write code here--------------------*/
 
-
+let day: number = 3
 
 
 
@@ -29,7 +27,7 @@
 // let isPublic = true
 
 /*--------------------write code here--------------------*/
-
+let isPublic:boolean = true
 
 
 
@@ -42,6 +40,10 @@
 // let set = new Set()
 /*--------------------write code here--------------------*/
 
+let set: Set<number | string> = new Set()
+set.add("test")
+set.add(1)
+// set.add(true)
 
 
 
@@ -53,6 +55,9 @@
 // let obj = {name:"Max"}
 /*--------------------write code here--------------------*/
 
+let obj: {[name:string]: string} = {
+       name:"Max"
+}
 
 
 
@@ -64,7 +69,8 @@
 
 //  let nums = [1,2,3,4]
 /*--------------------write code here--------------------*/
-
+// let nums: number[] = [1, 2, 3, 4] //this works
+let nums: Array<number> = [1, 2, 3, 4]
 
 
 
@@ -79,7 +85,7 @@
 // let strs = ["a","b","c","d"]
 
 /*--------------------write code here--------------------*/
-
+let strs: string[] = ["a","b","c","d"]
 
 
 
@@ -94,12 +100,13 @@
 
 /*--------------------write code here--------------------*/
 
-
+let arr: [number, number, string, object, object, boolean] = [1,2,"a",[],{},true]
 
 
 
 // -----------------Uncomment testcases----------------------
 // console.log("mixArr",arr)  //mixArr [ 1, 2, 'a', [], {}, true ]
+
 
 // --------------------------------------------------------------------------------------------------------------
 
@@ -107,7 +114,7 @@
 // let tup = [1,"Tom"]
 
 /*--------------------write code here--------------------*/
-
+let tup:[number, string] = [1,"Tom"]
 
 
 
@@ -125,30 +132,35 @@
 // const large =3
 /*--------------------write code here--------------------*/
 
-
+enum Size {
+       small = 1,
+       medium, large
+}
 
 
 
 // -----------------Uncomment testcases----------------------
 // console.log("Enum Size",Size)       //  Enum Size {'1': 'small', '2': 'medium',  '3': 'large',  small: 1,  medium: 2,  large: 3}
 // ----------------------------------------------------------------------------
-// convet Javascript function is typescript
+// convert Javascript function is typescript
 
 // function print(name){
 //
-//     return `Hello ${name}
+//     return `Hello ${name}`
 // }
 
 
 /*--------------------write code here--------------------*/
-
+function print(name:string): string{
+       return `Hello ${name}`
+}
 
 
 
 
 // -----------------Uncomment testcases----------------------
 
-// console.log(print("Max")   //Hello Max
+// console.log(print("Max"))   //Hello Max
 
 // --------------------------------------------------------------------------------------------------
 // Convert javascript class in typeScript
@@ -166,12 +178,25 @@
 // }
 /*--------------------write code here--------------------*/
 
+class Cat{
+    public name: string;
+    public age: number;
+    public color: string;
+    constructor(name:string,age:number,color:string){
+        this.name = name
+        this.age = age
+        this.color = color
+    }
 
+    myCatData(){
+       return `My cat name is ${this.name}, she is ${this.age} yr old and she is ${this.color}`
+    }
+}
 
 
 
 // -----------------Uncomment testcases----------------------
 
 
-// let c1 = new Cat("Fluffy",2,white)
-// console.log(c1.myCatData())   //My cat name is Fluffy, she is 2 yr old and she is black & white
+let c1 = new Cat("Fluffy",2,"white")
+console.log(c1.myCatData())   //My cat name is Fluffy, she is 2 yr old and she is black & white
